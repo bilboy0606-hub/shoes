@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/',
   build: {
-    outDir: 'shoes',
+    outDir: 'dist',
     emptyOutDir: true,
   },
 })
