@@ -41,9 +41,7 @@ class StripeController
         }
 
         // Check if Stripe is configured
-        // TEMPORARY: Hardcoded key for testing - env vars not loading in web context
-        $stripeKey = 'sk_test_51Sh8WqJOyiavn3rADOZfdNRlqhEMHaffVLR1d8As2JY2AUWHUCM4jaQ0OpAcjDksWjFqN5EffvRXxmwc03nOtNPk00iSGXB1DE';
-        // $stripeKey = getenv('STRIPE_SECRET_KEY') ?: ($_ENV['STRIPE_SECRET_KEY'] ?? '');
+        $stripeKey = getenv('STRIPE_SECRET_KEY') ?: ($_ENV['STRIPE_SECRET_KEY'] ?? '');
         if (empty($stripeKey) || str_starts_with($stripeKey, 'sk_test_REPLACE') || $stripeKey === 'sk_test_') {
             http_response_code(503);
             echo json_encode([
