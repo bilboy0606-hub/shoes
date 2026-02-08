@@ -1,6 +1,5 @@
-# Dependencies
+# Dependencies (dev only)
 node_modules/
-backend/vendor/
 
 # Environment
 .env
